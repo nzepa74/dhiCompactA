@@ -17,22 +17,35 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column text-sm" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <sec:authorize access="hasRole('1-VIEW')">
-                    <li class="nav-item">
-                        <a href="/createUser" class="nav-link">
-                            <i class="fas fa-user nav-icon"></i>
-                            <p>User Creation</p>
-                        </a>
-                    </li>
-                </sec:authorize>
-                <sec:authorize access="hasRole('2-VIEW')">
-                    <li class="nav-item">
-                        <a href="/userAccessPermission" class="nav-link">
-                            <i class="fas fa-outdent nav-icon"></i>
-                            <p>User Access Permission</p>
-                        </a>
-                    </li>
-                </sec:authorize>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-lock-open"></i>
+
+                        <p>
+                            Security Administration
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                            <sec:authorize access="hasRole('1-VIEW')">
+                        <li class="nav-item">
+                            <a href="/createUser" class="nav-link">
+                                <i class="fas fa-user nav-icon"></i>
+                                <p>User Creation</p>
+                            </a>
+                        </li>
+                        </sec:authorize>
+                        <sec:authorize access="hasRole('2-VIEW')">
+                            <li class="nav-item">
+                                <a href="/userAccessPermission" class="nav-link">
+                                    <i class="fas fa-outdent nav-icon"></i>
+                                    <p>User Access Permission</p>
+                                </a>
+                            </li>
+                        </sec:authorize>
+                    </ul>
+                </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
@@ -61,39 +74,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
 
-                        <p>
-                            Operation Screens
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-
-                                <p>ChartJS</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-
-                                <p>Flot</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-
-                                <p>Inline</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

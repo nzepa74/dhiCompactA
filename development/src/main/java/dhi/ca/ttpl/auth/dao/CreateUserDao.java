@@ -12,6 +12,7 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -44,12 +45,7 @@ public class CreateUserDao extends BaseDao {
         String sqlQuery = properties.getProperty("CommonDao.isLoginIdAlreadyExists");
         org.hibernate.Query hQuery = hibernateQuery(sqlQuery);
         hQuery.setParameter("loginValue", loginValue);
-        return (Boolean) hQuery.uniqueResult();
-
-//        String query = "SELECT COUNT(*) FROM tbl_users WHERE UserId =:loginValue";
-//        Session session = spmsSessionFactory.getCurrentSession();
-//        return !session.createSQLQuery(query).setParameter("loginValue", loginValue).uniqueResult().equals(BigInteger
-//                .ZERO);
+        return hQuery.uniqueResult().equals(BigInteger.ONE);
     }
 
     /**

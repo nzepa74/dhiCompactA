@@ -94,7 +94,6 @@ public class CreateUserController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseMessage saveUsers(HttpServletRequest request, CreateUserDTO createUserDTO) {
         CurrentUser currentUser = (CurrentUser) request.getSession().getAttribute("currentUser");
-        System.out.print(createUserDTO.getLoginId());
         return createUserService.saveUsers(createUserDTO, currentUser);
     }
 

@@ -53,7 +53,6 @@ public class UserAccessPermissionService {
                 userAccessPermissionDao.save(userAccessPermission);
             }
         }
-
         responseMessage.setStatus(1);
         responseMessage.setText("Information successfully saved.");
         return responseMessage;

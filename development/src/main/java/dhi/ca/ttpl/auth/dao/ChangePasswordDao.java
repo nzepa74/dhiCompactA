@@ -25,10 +25,6 @@ public class ChangePasswordDao extends BaseDao {
         org.hibernate.Query hQuery = hibernateQuery(sqlQuery);
         hQuery.setParameter("userId", userId);
         return (String) hQuery.uniqueResult();
-
-//        String query = "SELECT UserPassword FROM tbl_users WHERE UserId =:userId";
-//        Session session = spmsSessionFactory.getCurrentSession();
-//        return session.createSQLQuery(query).setParameter("userId", userId).uniqueResult().toString();
     }
 
     /**
@@ -44,13 +40,6 @@ public class ChangePasswordDao extends BaseDao {
         hQuery.setParameter("newPassword", newPassword);
         hQuery.setParameter("userId", userId);
         hQuery.executeUpdate();
-
-//        Session session = spmsSessionFactory.getCurrentSession();
-//        session.createSQLQuery("UPDATE tbl_users SET UserPassword =:newPassword WHERE UserId =:userId")
-//                .setParameter("newPassword", newPassword)
-//                .setParameter("userId", userId)
-//                .executeUpdate();
-
     }
     //endregion
 }

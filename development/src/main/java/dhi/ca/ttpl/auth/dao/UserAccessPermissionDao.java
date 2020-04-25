@@ -8,6 +8,7 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -39,19 +40,12 @@ public class UserAccessPermissionDao extends BaseDao {
         return hQuery.list().isEmpty() ? null : hQuery.list();
     }
 
-
     @Transactional(readOnly = true)
     public Boolean isUserRoleAssigned(Integer roleTypeId) {
         String sqlQuery = properties.getProperty("CommonDao.isUserRoleAssigned");
         org.hibernate.Query hQuery = hibernateQuery(sqlQuery);
         hQuery.setParameter("roleTypeId", roleTypeId);
-        return (Boolean) hQuery.uniqueResult();
-
-//        String query = "SELECT(EXISTS(SELECT * FROM tbl_useraccesspermission WHERE roleId=:roleTypeId))";
-//        Session session = sessionFactory.getCurrentSession();
-//        return session.createSQLQuery(query)
-//                .setParameter("roleTypeId", roleTypeId)
-//                .uniqueResult().equals(BigInteger.ONE);
+        return hQuery.uniqueResult().equals(BigInteger.ONE);
     }
 
     @Transactional(value = "txManager", rollbackFor = Exception.class)
@@ -61,7 +55,7 @@ public class UserAccessPermissionDao extends BaseDao {
 
     @Transactional(value = "txManager", rollbackFor = Exception.class)
     public void save(UserAccessPermission userAccessPermission) {
-        em.persist(userAccessPermission);
+        em.merge(userAccessPermission);
     }
 
 }
