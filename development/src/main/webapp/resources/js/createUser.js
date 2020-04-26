@@ -2,6 +2,13 @@
  * Created by jigme.dorji on 24-Apr-2020.
  */
 createUser = (function () {
+    "use strict";
+    var form = $('#createUsersForm');
+    var isSubmitted = false;
+
+    function _baseURL() {
+        return 'createUser/';
+    }
 
     //To display list values to field
     function displayGridValueToField() {
@@ -24,8 +31,11 @@ createUser = (function () {
     //To save the data
     function save() {
         $('#btnSave').on('click', function () {
-            $('#createUsersForm').validate({
-                submitHandler: function (form) {
+            $.validator.setDefaults({
+                submitHandler: function () {
+                    isSubmitted = true;
+                    $('#btnSave').attr('disabled', true);
+
                     $('#loginId').attr('disabled', false);
                     $.ajax({
                         url: 'createUser/save',
@@ -52,13 +62,60 @@ createUser = (function () {
                                     type: "error"
                                 })
                             }
-
                         }
                     });
                 }
             });
-        })
 
+            form.validate({
+                rules: {
+                    loginId: {
+                        required: true
+                    },
+                    txtUserName: {
+                        required: true
+                    },
+                    txtPassword: {
+                        required: true
+                    },
+                    txtConfirmPassword: {
+                        required: true
+                    },
+                    roleTypeId: {
+                        required: true
+                    }
+                },
+                messages: {
+                    loginId: {
+                        required: "This field is required"
+                    },
+                    txtUserName: {
+                        required: "This field is required"
+                    },
+                    txtPassword: {
+                        required: "This field is required"
+                    },
+                    txtConfirmPassword: {
+                        required: "This field is required"
+                    },
+                    roleTypeId: {
+                        required: "This field is required"
+                    }
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.col-3').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
+            });
+
+        });
     }
 
 

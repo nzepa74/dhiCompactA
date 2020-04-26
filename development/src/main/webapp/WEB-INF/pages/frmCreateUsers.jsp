@@ -49,7 +49,7 @@
 
                             <div class="col-3">
                                 <input type="text" name="txtUserName" id="txtUserName"
-                                       class="form-control form-control-sm"  required="true">
+                                       class="form-control form-control-sm" required="true">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -57,13 +57,13 @@
 
                             <div class="col-3">
                                 <input type="text" name="txtPassword" id="txtPassword"
-                                       class="form-control form-control-sm"  required="true">
+                                       class="form-control form-control-sm" required="true">
                             </div>
                             <label class="col-sm-2 col-form-label text-sm">Confirmed Password:</label>
 
                             <div class="col-3">
                                 <input type="text" name="txtConfirmPassword" id="txtConfirmPassword"
-                                       class="form-control form-control-sm"  required="true">
+                                       class="form-control form-control-sm" required="true">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -71,12 +71,13 @@
 
                             <div class="col-3">
                                 <input type="text" value="${createdDate}" readonly="readonly" name="createdDate"
-                                       id="createdDate" class="form-control form-control-sm"  required="true">
+                                       id="createdDate" class="form-control form-control-sm" required="true">
                             </div>
                             <label class="col-sm-2 col-form-label text-sm">User Roles:</label>
 
                             <div class="col-3">
-                                <form:select   required="true" class="form-control form-control-sm" tabindex="1" path="userRoleList"
+                                <form:select required="true" class="form-control form-control-sm" tabindex="1"
+                                             path="userRoleList"
                                              id="roleTypeId"
                                              name="roleTypeId">
                                     <form:option value="">---Please Select---</form:option>
@@ -117,8 +118,6 @@
                                 </table>
                             </div>
                         </div>
-
-
                     </div>
                 </form>
             </div>

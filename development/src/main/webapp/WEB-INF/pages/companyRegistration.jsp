@@ -19,7 +19,8 @@
 </head>
 <body class="hold-transition sidebar-mini">
 
-<form role="form" id="companyRegistrationFormId" action="<c:url value='/companyRegistration'/>"
+<form role="form" id="companyRegistrationFormId"
+      action="<c:url value='/companyRegistration'/>"
       method="post">
     <div class="card">
         <div class="card-body">

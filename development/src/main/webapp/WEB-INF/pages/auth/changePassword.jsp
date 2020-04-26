@@ -55,10 +55,12 @@
                                 <label class="col-sm-3 col-form-label text-sm">Existing Password:</label>
 
                                 <div class="col-md-4">
-                                    <input type="password" class="form-control form-control-sm isEnable" name="oldPassword"
+                                    <input type="password" class="form-control form-control-sm isEnable"
+                                           name="oldPassword"
                                            id="oldPassword"
                                            maxlength="20"
-                                           data-rule-required="true">
+                                           data-rule-required="true"
+                                            >
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -66,7 +68,8 @@
                                     Password:</label>
 
                                 <div class="col-md-4">
-                                    <input type="password" class="form-control form-control-sm readonly" id="newPassword"
+                                    <input type="password" class="form-control form-control-sm readonly"
+                                           id="newPassword"
                                            name="newPassword"
                                            maxlength="50" data-rule-required="true">
                                 </div>
@@ -76,7 +79,8 @@
                                     Password:</label>
 
                                 <div class="col-md-4">
-                                    <input type="password" class="form-control form-control-sm isDisable" id="confirmPassword"
+                                    <input type="password" class="form-control form-control-sm isDisable"
+                                           id="confirmPassword"
                                            name="confirmPassword" data-rule-required="true">
                                 </div>
                             </div>
