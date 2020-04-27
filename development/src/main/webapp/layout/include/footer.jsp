@@ -1,20 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Bcass Sawa
-  Date: 6/3/2018
-  Time: 6:01 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- footer -->
 <footer class="main-footer text-sm">
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 0.0.1
+        <b>Version</b> 1.0.0.0
     </div>
-    <strong>Copyright &copy; 2018 <a href="#">Remix Developers</a>.</strong> All rights
+    <strong>Copyright &copy;
+        <%
+            String currentDate = new SimpleDateFormat("yyyy").format(new Date());
+            out.print(currentDate);
+        %>
+        <a href="#">TTPL</a>.</strong> All rights
     reserved.
 </footer>
-
 
 <style>
     .modal-header {
@@ -27,7 +26,6 @@
 
     }
 </style>
-
 
 <div class="modal fade" tabindex="-1" role="dialog" id="booking-search-modal">
     <div class="modal-dialog" role="document">

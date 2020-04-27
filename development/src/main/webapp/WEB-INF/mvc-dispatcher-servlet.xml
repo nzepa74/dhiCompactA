@@ -24,9 +24,6 @@
         </bean>
     </mvc:interceptors>
 
-    <!--<security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>-->
-    <!--<aop:aspectj-autoproxy/>-->
-
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
@@ -40,9 +37,7 @@
 
     <import resource="configuration/connection-string.xml"/>
     <import resource="configuration/data-context.xml"/>
-
     <import resource="configuration/spring-security.xml"/>
-
 
     <bean class="dhi.ca.ttpl.helper.CurrentUser" id="currentUser" scope="request"/>
 

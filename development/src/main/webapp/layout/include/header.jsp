@@ -18,6 +18,11 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
+        <li>
+            <div class="nav-link">
+                <label> DHI Compact Automation System</label>
+            </div>
+        </li>
     </ul>
 
     <!-- right navbar links -->
@@ -35,8 +40,8 @@
                     class="fa fa-key fa-fw"></i> Change Password</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a class="nav-link" href="javascript:$('#logoutForm').submit();" ><i
-                    class="fa fa-power-off"></i> Logout</a>
+            <a class="nav-link" href="javascript:$('#logoutForm').submit();">
+                <i class="fa fa-power-off" style="color: #df3c87"></i> Logout</a>
         </li>
     </ul>
 
